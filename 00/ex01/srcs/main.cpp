@@ -7,7 +7,7 @@ static void		add_cmd(Contact phonebook[8], int i){
 		std::cout << "--- CONTACT LIST IS FULL --- " << std::endl;
 		return ;
 	}
-	std::cout<< " --- ADDING NEW CONTACT ---" << std::endl;
+	std::cout << " --- ADDING NEW CONTACT ---" << std::endl;
 	std::cout << "First name : ";
 	if (!getline(std::cin, contact.firstName))
 		return ;
@@ -45,24 +45,42 @@ static void		add_cmd(Contact phonebook[8], int i){
 	std::cout << std::endl << "New contact added with success." << std::endl;
 }
 
-void	search_cmd(Contact phonebook[8], int i_max){
+static void		display_lst_contact(Contact phonebook[8], int i){
+	int	fieldlenght = 11;
+	int	index = -1;
+
+	std::cout << std::setw(fieldlenght) << "index|" << std::setw(fieldlenght) << "first name|" << 
+	std::setw(fieldlenght) << "last name|" << std::setw(fieldlenght) << "nickname|" << std::endl;
+	while (++index < i){
+		phonebook[index].showContact_search(index + 1);	
+	}
+}
+
+static void		search_cmd(Contact phonebook[8], int i_max){
 	int	i;
 	std::string temp;
 
 	if (i_max > 8)
 		i_max = 8;
 	if (i_max == 0){
-		std::cout<< "Can't SEARCH : no contact saved." << std::endl;
+		std::cout << "Can't SEARCH : no contact saved." << std::endl;
 		return ;
 	}
-	std::cout<< " --- SEARCH selected --- :" << std::endl;
+	std::cout << " --- SEARCH selected --- " << std::endl;
+	display_lst_contact(phonebook, i_max);
+	std::cout << "choose an index for more datails : ";
 	std::getline(std::cin, temp);
-	i=std::stoi(temp);
+	try {
+		i=std::stoi(temp);
+	} catch (...){
+		std::cout << "Can't SEARCH : input is not a number !" << std::endl;
+		return ;
+	}
 	if (i_max < i){
-		std::cout<< "Can't SEARCH : no contact saved at this index." << std::endl;
+		std::cout << "Can't SEARCH : no contact saved at this index." << std::endl;
 		return ;
 	} else if (i <= 0) {
-		std::cout<< "Can't SEARCH : negative or null index doesn't exist !" << std::endl;
+		std::cout << "Can't SEARCH : negative or null index doesn't exist !" << std::endl;
 		return ;
 	}
 	phonebook[i - 1].showContact();
@@ -99,6 +117,6 @@ int main(){
 			std::cout << "command not found, command expected : ADD SEARCH EXIT" << std::endl;
 
 	}
-	std::cout<< "EXIT SUCCEEDED" << std::endl;
+	std::cout << "EXIT SUCCEEDED" << std::endl;
 	return 0;
 }

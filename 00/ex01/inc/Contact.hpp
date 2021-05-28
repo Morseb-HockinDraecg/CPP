@@ -27,9 +27,9 @@ public:
 	Contact(void);
 	~Contact(void);
 
-	void setContact(t_contact contact);
-	void showContact(void) const;
-
+	void	setContact(t_contact contact);
+	void	showContact(void) const;
+	void	showContact_search(int i) const;
 
 private:
 	std::string _firstName;

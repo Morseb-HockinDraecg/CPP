@@ -20,6 +20,31 @@ void Contact::setContact(t_contact c){
 	this->_darkestSecret = c.darkestSecret;
 }
 
+static void resize_and_print(std::string field){
+	std::string	tmp;
+
+	tmp = field;
+	if (tmp.length() > 10){
+		tmp.resize (9);
+		tmp.append(1,'.');
+	}
+	std::cout << tmp;
+	tmp.clear();
+}
+
+void Contact::showContact_search(int i) const{
+	int			fieldlenght = 10;
+
+	std::cout << std::setw(fieldlenght);
+	std::cout << i << "|" << std::setw(fieldlenght);
+	resize_and_print(this->_firstName);
+	std::cout << "|" << std::setw(fieldlenght);
+	resize_and_print(this->_lastName);
+	std::cout << "|" << std::setw(fieldlenght);
+	resize_and_print(this->_nickname);
+	std::cout << "|" << std::endl;
+}
+
 void Contact::showContact(void) const{
 	std::cout << "First name : " << this->_firstName << std::endl;
 	std::cout << "Last name : " << this->_lastName << std::endl;
