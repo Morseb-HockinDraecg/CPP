@@ -8,9 +8,13 @@ static void		add_cmd(Contact phonebook[8], int i){
 		return ;
 	}
 	std::cout << " --- ADDING NEW CONTACT ---" << std::endl;
+	while (contact.firstName.empty()){
 	std::cout << "First name : ";
-	if (!getline(std::cin, contact.firstName))
-		return ;
+		if (!getline(std::cin, contact.firstName))
+			return ;
+		if (contact.firstName.empty())
+			std::cout << " -- Waiting for input --" << std::endl;
+	}
 	std::cout << "Last name : ";
 	if (!getline(std::cin, contact.lastName))
 		return ;
