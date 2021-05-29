@@ -5,18 +5,27 @@
 #include <string>
 #include <iomanip>
 
+typedef struct s_pony{
+	std::string	color;
+	int			size;
+	int			age;
+} t_pony;
+
 class Pony {
 
 public:
 
-	Pony(void);
+	Pony(std::string name);
 	~Pony(void);
 
+	void setValues(t_pony p);
+	void showValues(void) const;
+
 private:
-	std::string	name;
-	std::string	color;
-	int			size;
-	int			age;
+	std::string	_name;
+	std::string	_color;
+	int			_size;
+	int			_age;
 };
 
 #endif
