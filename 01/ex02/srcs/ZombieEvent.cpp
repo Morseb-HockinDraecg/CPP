@@ -13,8 +13,13 @@ Zombie* ZombieEvent::newZombie(std::string name){
 }
 
 void	ZombieEvent::randomChump(std::string& name){
+	std::string names[5];
 
-	name = "asttd";
+	names[0] = "Chumpchump";
+	names[1] = "Zozo";
+	names[2] = "Plou";
+	names[3] = "a";
+	names[4] = "a";
 }
 
 Zombie*	ZombieEvent::setZombieType(std::string type){

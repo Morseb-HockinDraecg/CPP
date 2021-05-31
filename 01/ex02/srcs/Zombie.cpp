@@ -6,7 +6,7 @@ Zombie::Zombie(void){
 }
 
 Zombie::~Zombie(void){
-	std::cout << this->_name << "has been destroyed" << std::endl;
+	std::cout << this->_name << " has been destroyed" << std::endl;
 }
 
 void Zombie::annonce(void) const{
