@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include "Brain.hpp"
 
 class Human {
 
@@ -12,8 +13,10 @@ public:
 	Human(void);
 	~Human(void);
 
-private:
+	void	identify(void) const;
 
+private:
+	Brain const	b;
 };
 
 #endif
