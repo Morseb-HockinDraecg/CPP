@@ -1,9 +1,6 @@
 #ifndef HUMAN_H
 # define HUMAN_H
 
-#include <iostream>
-#include <string>
-#include <iomanip>
 #include "Brain.hpp"
 
 class Human {
@@ -13,11 +10,11 @@ public:
 	Human(void);
 	~Human(void);
 
-	Brain	identify(void) const;
-	void	setBrain(Brain const b);
+	std::string	identify(void) const;
+	const Brain&	getBrain(void) const;
 
 private:
-	Brain	const _brain;
+	const Brain	 _brain;
 };
 
 #endif

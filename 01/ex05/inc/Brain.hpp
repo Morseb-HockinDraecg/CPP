@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <sstream>
 
 class Brain {
 
@@ -12,13 +13,12 @@ public:
 	Brain(void);
 	~Brain(void);
 
-	void	identify(void) const;
+	std::string	identify(void) const;
 
 private:
 
 	int			_age;
 	int			_neurons_nb;
-	std::string	_past_and_maladies;
 
 };
 
