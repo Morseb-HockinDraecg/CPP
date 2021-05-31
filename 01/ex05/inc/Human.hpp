@@ -13,10 +13,11 @@ public:
 	Human(void);
 	~Human(void);
 
-	void	identify(void) const;
+	Brain	identify(void) const;
+	void	setBrain(Brain const b);
 
 private:
-	Brain const	b;
+	Brain	const _brain;
 };
 
 #endif
