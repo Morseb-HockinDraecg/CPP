@@ -33,6 +33,8 @@ static void	cpy_and_replace_file(t_strs& s){
 
 		ofs << line << std::endl;
 	}
+	ifs.close();
+	ofs.close();
 }
 
 static void init(t_strs& s, char **av){

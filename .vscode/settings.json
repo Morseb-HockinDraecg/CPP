@@ -63,6 +63,11 @@
 		"vector": "cpp",
 		"numeric": "cpp",
 		"random": "cpp",
-		"fstream": "cpp"
+		"fstream": "cpp",
+		"__functional_03": "cpp",
+		"deque": "cpp",
+		"memory_resource": "cpp",
+		"filesystem": "cpp",
+		"stack": "cpp"
 	}
 }
