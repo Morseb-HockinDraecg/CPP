@@ -20,8 +20,8 @@ public:
 
 private:
 
-	int					_fixedValue;
-	static const int	_frac = 8;
+	int					_rawBits;
+	static const int	_iBits = 8;
 
 };
 
