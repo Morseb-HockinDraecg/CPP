@@ -1,16 +1,14 @@
-INC_DIR := inc/
-SRC_DIR	:= srcs/
 OBJ_DIR	:= obj/
 
 OBJ_DIRS = $(OBJ_DIR)
 
-PRE_SRCS =	main FragTrap
+PRE_SRCS =	main FragTrap ScavTrap
 
 SRCS = $(addsuffix .cpp, $(addprefix $(SRC_DIR), $(PRE_SRCS)))
 OBJS = $(addsuffix .o, $(addprefix $(OBJ_DIR), $(PRE_SRCS)))
 
 
-NAME := FR4G-TP
+NAME := a
 
 
 CC := clang++
