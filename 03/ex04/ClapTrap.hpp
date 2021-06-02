@@ -9,6 +9,7 @@ class ClapTrap {
 
 public:
 
+	ClapTrap( void );
 	ClapTrap(std::string name, int hp, int maxHp, int energy, int maxEnergy, int meleeDmg, int rangeDmg, int armor);
 	ClapTrap(ClapTrap const & src);
 	virtual ~ClapTrap(void);

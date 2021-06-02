@@ -1,6 +1,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
 void	nl(void){
 	std::cout << std::endl;
@@ -95,11 +96,30 @@ void	mainFrom03(){
 	nl();
 }
 
+void main04(){
+	SuperTrap s1("chouchou");
+
+	nl();
+	std::cout << s1.getHp() << std::endl;
+	std::cout << s1.getMaxHp() << std::endl;
+	std::cout << s1.getEnergy() << std::endl;
+	std::cout << s1.getMaxEnergy() << std::endl;
+	std::cout << s1.getLvl() << std::endl;
+	std::cout << s1.getName() << std::endl;
+	std::cout << s1.getMeleeDmg() << std::endl;
+	std::cout << s1.getRangeDmg() << std::endl;
+	std::cout << s1.getArmor() << std::endl;
+	nl();
+}
+
 int main(){
 	mainFrom00();
 	mainFrom00ChangeForNewClass();
 	nl();
 	nl();
 	mainFrom03();
+	nl();
+	nl();
+	main04();
 	return 0;
 }

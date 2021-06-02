@@ -1,5 +1,9 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap( void){
+    std::cout << "Copy Constructor called" << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name, int hp, int maxHp, int energy, int maxEnergy, int meleeDmg, int rangeDmg, int armor) :
  _name(name), _hp(hp), _maxHp(maxHp), _energy(energy), _maxEnergy(maxEnergy), _lvl(1), _meleeDmg(meleeDmg), _rangeDmg(rangeDmg), _armor(armor){
     std::cout << "ClapTrap Constructor called" << std::endl;
@@ -119,7 +123,7 @@ void	ClapTrap::setEnergy(int energy){
     this->_energy = energy;
 }
 void	ClapTrap::setMaxEnergy(int energy){
-    this->_energy = energy;
+    this->_maxEnergy = energy;
 }
 void	ClapTrap::setLvl(int lvl){
     this->_lvl = lvl;

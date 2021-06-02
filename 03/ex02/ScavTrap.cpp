@@ -1,5 +1,8 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap( void){
+    std::cout << "Copy Constructor called" << std::endl;
+}
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 50, 50, 20, 15, 3) {
     std::cout << "Constructor of Scav called" << std::endl;
 }

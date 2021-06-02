@@ -1,5 +1,9 @@
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap( void){
+    std::cout << "Copy Constructor called" << std::endl;
+}
+
 FragTrap::FragTrap(std::string name) :  ClapTrap(name, 100, 100, 30, 20, 5) {
     std::cout << "Constructor called" << std::endl;
 }
