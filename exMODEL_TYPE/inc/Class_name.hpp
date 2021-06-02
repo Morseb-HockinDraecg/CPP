@@ -10,7 +10,10 @@ class Class_name {
 public:
 
 	Class_name(void);
+	Class_name(Class_name const & src);
 	~Class_name(void);
+
+	Class_name & operator=(Class_name const & rhs);
 
 private:
 
