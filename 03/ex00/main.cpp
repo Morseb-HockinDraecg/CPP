@@ -22,6 +22,7 @@ int main(){
 	FragTrap	f2("\033[35mNapy\033[0m");
 	int			AttackLoop = 6;
 
+	srand((unsigned int)time(0));
 	nl();
 	for (int i = 0; i < AttackLoop; i++)
 		f1AttackRF2(f1, f2);
@@ -36,6 +37,7 @@ int main(){
 	nl();
 	f1.beRepaired(200);
 	nl();
-	f1.vaulthunter_dot_exe("Moulinette");
+	for (int i = 0; i < AttackLoop; i++)
+		f1.vaulthunter_dot_exe("Moulinette");
 	return 0;
 }

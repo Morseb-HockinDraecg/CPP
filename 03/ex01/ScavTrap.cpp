@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : _name(name), _hp(100), _maxHp(100), _energy(100), _maxEnergy(100), _lvl(1), _meleeDmg(30), _rangeDmg(20), _armor(5){
+ScavTrap::ScavTrap(std::string name) : _name(name), _hp(100), _maxHp(100), _energy(50), _maxEnergy(50), _lvl(1), _meleeDmg(30), _rangeDmg(20), _armor(5){
     std::cout << "Constructor called" << std::endl;
 }
 
