@@ -1,25 +1,25 @@
-#ifndef SCAVTRAP_H
-# define SCAVTRAP_H
+#ifndef CLAPTRAP_H
+# define CLAPTRAP_H
 
 #include <iostream>
 #include <string>
 #include <iomanip>
 
-class ScavTrap {
+class ClapTrap {
 
 public:
 
-	ScavTrap(std::string name);
-	ScavTrap(ScavTrap const & src);
-	~ScavTrap(void);
+	ClapTrap(std::string name, int energy, int maxEnergy, int meleeDmg, int rangeDmg, int armor);
+	ClapTrap(ClapTrap const & src);
+	~ClapTrap(void);
 
-	ScavTrap & operator=(ScavTrap const & rhs);
+	ClapTrap & operator=(ClapTrap const & rhs);
 
 	void	rangedAttack(std::string const & target);
 	void	meleeAttack(std::string const & target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
-	void	challengeNewcomer(std::string const & target);
+	void	vaulthunter_dot_exe(std::string const & target);
 
 
 	std::string	getName(void) const;
@@ -32,7 +32,7 @@ public:
 	unsigned int			getRangeDmg(void) const;
 	unsigned int			getArmor(void) const;
 
-private:
+protected:
 
 	void	setName(std::string name);
 	void	setHp(int hp);

@@ -1,19 +1,21 @@
-#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : _name(name), _hp(100), _maxHp(100), _energy(50), _maxEnergy(50), _lvl(1), _meleeDmg(20), _rangeDmg(15), _armor(3){
-    std::cout << "Constructor of Scav called" << std::endl;
+// ClapTrap::ClapTrap(std::string name) : _name(name), _hp(100), _maxHp(100), _energy(100), _maxEnergy(100), _lvl(1), _meleeDmg(30), _rangeDmg(20), _armor(5){
+ClapTrap::ClapTrap(std::string name, int energy, int maxEnergy, int meleeDmg, int rangeDmg, int armor) :
+ _name(name), _hp(100), _maxHp(100), _energy(energy), _maxEnergy(maxEnergy), _lvl(1), _meleeDmg(meleeDmg), _rangeDmg(rangeDmg), _armor(armor){
+    std::cout << "Constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const & src){
-    std::cout << "Copy Constructor of Scav called" << std::endl;
+ClapTrap::ClapTrap(ClapTrap const & src){
+    std::cout << "Copy Constructor called" << std::endl;
     this->operator=(src);
 }
 
-ScavTrap::~ScavTrap(void){
-    std::cout << "Destructor of Scav called" << std::endl;
+ClapTrap::~ClapTrap(void){
+    std::cout << "Destructor called" << std::endl;
 }
 
-ScavTrap & ScavTrap::operator=(ScavTrap const & rhs){
+ClapTrap & ClapTrap::operator=(ClapTrap const & rhs){
     this->_name = rhs.getName();
     this->_hp = rhs.getHp();
     this->_maxHp = rhs.getMaxHp();
@@ -24,7 +26,7 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & rhs){
     return (*this);
 }
 
-void	ScavTrap::challengeNewcomer(std::string const & target){
+void	ClapTrap::vaulthunter_dot_exe(std::string const & target){
     std::string attacks[5];
     int         iAttacks;
 
@@ -39,19 +41,19 @@ void	ScavTrap::challengeNewcomer(std::string const & target){
     attacks[2] = "One-Shot Wonder";
     attacks[3] = "Boomtrap";
     attacks[4] = "I Love You Guys!";
-    std::cout << "FR4G-TP " << this->getName() << " ultimate " << target << " with \033[1;31m" << attacks[iAttacks] << "\033[0m, causing " << this->getRangeDmg() << " points of damage!" << std::endl;
+    std::cout << "FR4G-TP " << this->getName() << " attacks " << target << " with \033[1;31m" << attacks[iAttacks] << "\033[0m, causing " << this->getRangeDmg() << " points of damage!" << std::endl;
     this->setEnergy(this->getEnergy() - 25);
 }
 
-void	ScavTrap::rangedAttack(std::string const & target){
-    std::cout << "FR4G-TP " << this->getName() << " distract " << target << " at range, causing \033[31m" << this->getRangeDmg() << "\033[0m points of damage!" << std::endl;
+void	ClapTrap::rangedAttack(std::string const & target){
+    std::cout << "FR4G-TP " << this->getName() << " attacks " << target << " at range, causing \033[31m" << this->getRangeDmg() << "\033[0m points of damage!" << std::endl;
 }
 
-void	ScavTrap::meleeAttack(std::string const & target){
-    std::cout << "FR4G-TP " << this->getName() << " charge " << target <<" at melee, causing \033[31m" << this->getMeleeDmg() << "\033[0m points of damage!" << std::endl;
+void	ClapTrap::meleeAttack(std::string const & target){
+    std::cout << "FR4G-TP " << this->getName() << " attacks " << target <<" at melee, causing \033[31m" << this->getMeleeDmg() << "\033[0m points of damage!" << std::endl;
 }
 
-void	ScavTrap::takeDamage(unsigned int amount){
+void	ClapTrap::takeDamage(unsigned int amount){
     unsigned int    dmgTaken = 0;
 
     if (amount > this->getArmor())
@@ -63,7 +65,7 @@ void	ScavTrap::takeDamage(unsigned int amount){
     std::cout << "FR4G-TP " << this->getName() << " has been OS ! hahaha" << std::endl;
 }
 
-void	ScavTrap::beRepaired(unsigned int amount){
+void	ClapTrap::beRepaired(unsigned int amount){
     unsigned int    hpRecovered = amount;
     unsigned int    hpToMaxHp = this->getMaxHp() - this->getHp();
 
@@ -74,61 +76,61 @@ void	ScavTrap::beRepaired(unsigned int amount){
     std::cout << "FR4G-TP " << this->getName() << " has \033[32m" << this->getHp() << "\033[0m hp left" << std::endl;
 }
 
-std::string	ScavTrap::getName(void) const{
+std::string	ClapTrap::getName(void) const{
     return (this->_name);
 }
-unsigned int			ScavTrap::getHp(void) const{
+unsigned int			ClapTrap::getHp(void) const{
     return (this->_hp);
 }
-unsigned int			ScavTrap::getMaxHp(void) const{
+unsigned int			ClapTrap::getMaxHp(void) const{
     return (this->_maxHp);
 }
-unsigned int			ScavTrap::getEnergy(void) const{
+unsigned int			ClapTrap::getEnergy(void) const{
     return (this->_energy);
 }
-unsigned int			ScavTrap::getMaxEnergy(void) const{
+unsigned int			ClapTrap::getMaxEnergy(void) const{
     return (this->_maxEnergy);
 }
-unsigned int			ScavTrap::getLvl(void) const{
+unsigned int			ClapTrap::getLvl(void) const{
     return (this->_lvl);
 }
-unsigned int			ScavTrap::getMeleeDmg(void) const{
+unsigned int			ClapTrap::getMeleeDmg(void) const{
     return (this->_meleeDmg);
 }
-unsigned int			ScavTrap::getRangeDmg(void) const{
+unsigned int			ClapTrap::getRangeDmg(void) const{
     return (this->_rangeDmg);
 }
-unsigned int			ScavTrap::getArmor(void) const{
+unsigned int			ClapTrap::getArmor(void) const{
     return (this->_armor);
 }
 
-void	ScavTrap::setName(std::string name){
+void	ClapTrap::setName(std::string name){
     this->_name = name;
 }
-void	ScavTrap::setHp(int hp){
+void	ClapTrap::setHp(int hp){
     if (hp < 0)
 		this->_hp = 0;
 	else
         this->_hp = hp;
 }
-void	ScavTrap::setMaxHp(int maxHp){
+void	ClapTrap::setMaxHp(int maxHp){
     this->_maxHp = maxHp;
 }
-void	ScavTrap::setEnergy(int energy){
+void	ClapTrap::setEnergy(int energy){
     this->_energy = energy;
 }
-void	ScavTrap::setMaxEnergy(int energy){
+void	ClapTrap::setMaxEnergy(int energy){
     this->_energy = energy;
 }
-void	ScavTrap::setLvl(int lvl){
+void	ClapTrap::setLvl(int lvl){
     this->_lvl = lvl;
 }
-void	ScavTrap::setMeleeDmg(int melee){
+void	ClapTrap::setMeleeDmg(int melee){
     this->_meleeDmg = melee;
 }
-void	ScavTrap::setRangeDmg(int range){
+void	ClapTrap::setRangeDmg(int range){
     this->_rangeDmg = range;
 }
-void	ScavTrap::setArmor(int armor){
+void	ClapTrap::setArmor(int armor){
     this->_armor = armor;
 }
