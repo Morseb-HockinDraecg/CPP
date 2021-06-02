@@ -4,10 +4,9 @@ FragTrap::FragTrap(std::string name) :  ClapTrap(name, 100, 100, 30, 20, 5) {
     std::cout << "Constructor called" << std::endl;
 }
 
-// FragTrap::FragTrap(FragTrap const & src){
-//     std::cout << "Copy Constructor called" << std::endl;
-//     this->operator=(src);
-// }
+FragTrap::FragTrap(FragTrap const & src) : ClapTrap(src){
+    std::cout << "Copy Constructor called" << std::endl;
+}
 
 FragTrap::~FragTrap(void){
     std::cout << "Destructor called" << std::endl;

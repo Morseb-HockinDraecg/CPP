@@ -4,10 +4,9 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 50, 50, 20, 15, 3) {
     std::cout << "Constructor of Scav called" << std::endl;
 }
 
-// ScavTrap::ScavTrap(ScavTrap const & src){
-//     std::cout << "Copy Constructor of Scav called" << std::endl;
-//     this->operator=(src);
-// }
+ScavTrap::ScavTrap(ScavTrap const & src) : ClapTrap(src){
+    std::cout << "Copy Constructor of Scav called" << std::endl;
+}
 
 ScavTrap::~ScavTrap(void){
     std::cout << "Destructor of Scav called" << std::endl;

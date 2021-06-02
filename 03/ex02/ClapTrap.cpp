@@ -3,16 +3,16 @@
 // ClapTrap::ClapTrap(std::string name) : _name(name), _hp(100), _maxHp(100), _energy(100), _maxEnergy(100), _lvl(1), _meleeDmg(30), _rangeDmg(20), _armor(5){
 ClapTrap::ClapTrap(std::string name, int energy, int maxEnergy, int meleeDmg, int rangeDmg, int armor) :
  _name(name), _hp(100), _maxHp(100), _energy(energy), _maxEnergy(maxEnergy), _lvl(1), _meleeDmg(meleeDmg), _rangeDmg(rangeDmg), _armor(armor){
-    std::cout << "Constructor called" << std::endl;
+    std::cout << "ClapTrap Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const & src){
-    std::cout << "Copy Constructor called" << std::endl;
+    std::cout << "ClapTrap Copy Constructor called" << std::endl;
     this->operator=(src);
 }
 
 ClapTrap::~ClapTrap(void){
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "ClapTrap Destructor called" << std::endl;
 }
 
 ClapTrap & ClapTrap::operator=(ClapTrap const & rhs){

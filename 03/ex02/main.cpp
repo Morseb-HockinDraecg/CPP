@@ -81,7 +81,7 @@ void	mainFrom00ChangeForNewClass(void){
 }
 
 int main(){
-	// mainFrom00();
+	mainFrom00();
 	mainFrom00ChangeForNewClass();
 	return 0;
 }

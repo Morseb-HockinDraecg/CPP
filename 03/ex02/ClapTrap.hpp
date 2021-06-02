@@ -11,7 +11,7 @@ public:
 
 	ClapTrap(std::string name, int energy, int maxEnergy, int meleeDmg, int rangeDmg, int armor);
 	ClapTrap(ClapTrap const & src);
-	~ClapTrap(void);
+	virtual ~ClapTrap(void);
 
 	ClapTrap & operator=(ClapTrap const & rhs);
 
