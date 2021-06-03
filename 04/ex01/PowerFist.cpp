@@ -1,6 +1,6 @@
 #include "PowerFist.hpp"
 
-PowerFist::PowerFist(void) : AWeapon("PowerFist", 50, 8){
+PowerFist::PowerFist(void) : AWeapon("Power Fist", 50, 8){
 }
 
 PowerFist::PowerFist(PowerFist const & src) : AWeapon(src){
