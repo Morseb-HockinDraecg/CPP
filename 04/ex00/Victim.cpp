@@ -4,7 +4,7 @@ Victim::Victim(void){
 }
 
 Victim::Victim(std::string name) : _name(name){
-    std::cout << "Some random victim called " << name << " just apprared!" << std::endl;
+    std::cout << "Some random victim called " << name << " just appeared!" << std::endl;
 }
 
 Victim::Victim(Victim const & src){
