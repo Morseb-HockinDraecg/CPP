@@ -1,5 +1,5 @@
-INC_DIR := inc/
-SRC_DIR	:= srcs/
+# INC_DIR := inc/
+# SRC_DIR	:= srcs/
 OBJ_DIR	:= obj/
 
 OBJ_DIRS = $(OBJ_DIR)
@@ -27,7 +27,7 @@ $(NAME): $(OBJ_DIRS) $(OBJS)
 $(OBJ_DIRS):
 	mkdir -p $(OBJ_DIRS)
 
-$(OBJS) : $(INC_DIR)
+# $(OBJS) : $(INC_DIR)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
 	$(CC) $(CFLAGS) $(INC) -c $< -o $@
