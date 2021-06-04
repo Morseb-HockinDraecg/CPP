@@ -20,7 +20,10 @@ Character & Character::operator=(Character const & rhs){
 
 
 void Character::recoverAP(){
-
+	if (this->getAp() + 10 > 40)
+		this->setAp(40);
+	else
+		this->setAp(this->getAp() + 10);
 }
 
 void Character::equip(AWeapon* weapon){
@@ -28,10 +31,19 @@ void Character::equip(AWeapon* weapon){
 }
 
 void Character::attack(Enemy* enemy){
-	if (!this->getWeapon())
+	int	apCost;
+	if (!this->getWeapon() || !enemy)
 		return ;
+	apCost = (*this->getWeapon()).getAPCost();
+	if (apCost > this->getAp())
+		return ;
+	this->setAp(this->getAp() - apCost);
+   	std::cout << this->getName() << " attacks " << enemy->getType() << " with " << (*this->getWeapon()).getName() << std::endl;
 	(this->_weapon)->attack();
 	enemy->takeDamage((this->_weapon)->getDamage());
+	if (enemy->getHP() <= 0){
+		delete enemy;
+	}
 }
 
 std::string const	Character::getName() const		{return this->_name;}

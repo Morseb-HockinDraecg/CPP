@@ -10,7 +10,7 @@ class AWeapon {
 public:
 
 	AWeapon();
-	AWeapon(std::string const & name, int apcost, int damage);
+	AWeapon(std::string const & name, int damage, int apcost);
 	AWeapon(AWeapon const & src);
 	virtual ~AWeapon();
 
@@ -29,8 +29,8 @@ protected:
 	void	setAPCost(int ap);
 
 	std::string	_name;
-	int			_APCost;
 	int			_damage;
+	int			_APCost;
 
 };
 

@@ -11,7 +11,7 @@ public:
 	SuperMutant(SuperMutant const & src);
 	~SuperMutant(void);
 
-	// void takeDamage(int dmg);
+	void takeDamage(int dmg);
 
 private:
 

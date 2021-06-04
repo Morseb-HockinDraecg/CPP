@@ -3,7 +3,7 @@
 
 AWeapon::AWeapon(void){
 }
-AWeapon::AWeapon(std::string const & name, int apcost, int damage): _name(name), _APCost(apcost), _damage(damage){
+AWeapon::AWeapon(std::string const & name, int damage, int apcost): _name(name), _damage(damage), _APCost(apcost){
 }
 AWeapon::AWeapon(AWeapon const & src){
     this->operator=(src);
