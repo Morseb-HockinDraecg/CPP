@@ -12,5 +12,5 @@ Class_name::~Class_name(void){
 
 Class_name & Class_name::operator=(Class_name const & rhs){
     // this->_var = rhs.accessVar();
-    return (*this)
+    return (*this);
 }
