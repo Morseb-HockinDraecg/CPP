@@ -30,9 +30,9 @@ void Enemy::takeDamage(int dmg){
 		return;
 	if (dmg > hpLeft)
 		dmg = hpLeft;
-	std::cout << "Damage taken : \033[31m" << dmg << "\033[0m" << std::endl;
+	// std::cout << "Damage taken : \033[31m" << dmg << "\033[0m" << std::endl;
 	this->setHp(hpLeft - dmg);
-	std::cout << "Hp left : \033[32m" << this->getHP() << "\033[0m" << std::endl;
+	// std::cout << "Hp left : \033[32m" << this->getHP() << "\033[0m" << std::endl;
 }
 
 void		Enemy::setHp(int hp){
