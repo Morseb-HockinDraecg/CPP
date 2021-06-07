@@ -2,7 +2,6 @@
 # define CHARACTER_H
 
 #include "ICharacter.hpp"
-#include <vector>
 
 class Character : public ICharacter {
 
@@ -19,12 +18,14 @@ public:
 
 	virtual std::string const & getName() const {return this->_name;}
 	Character & operator=(Character const & rhs);
+	AMateria*	getMat(int n) const;
 
 private:
 	void		setName(std::string name) {this->_name = name;}
 
-	std::string				_name;
-	std::vector<AMateria*>	_inventory;
+	static int const	bagSize = 4;
+	std::string			_name;
+	AMateria*			_inventory[bagSize];
 };
 
 #endif

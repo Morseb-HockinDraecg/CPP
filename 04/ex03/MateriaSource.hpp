@@ -5,7 +5,7 @@
 #include "AMateria.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
-#include <list>
+#include "Pyro.hpp"
 
 class MateriaSource : public IMateriaSource {
 
@@ -20,8 +20,13 @@ public:
 	
 	MateriaSource & operator=(MateriaSource const & rhs);
 
+	int			getMatNB(void) const {return this->_NbrMaterial;};
+
 private:
-	std::list<AMateria*>  _lst;
+
+	static int const _maxMat = 4;
+	AMateria*  _lst[_maxMat];
+	int			_NbrMaterial;
 
 };
 
