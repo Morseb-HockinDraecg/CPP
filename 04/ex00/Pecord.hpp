@@ -10,7 +10,7 @@ public:
 
 	Pecord(std::string name);
 	Pecord(Pecord const & src);
-	~Pecord(void);
+	virtual ~Pecord(void);
 
 
 private:

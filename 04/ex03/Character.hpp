@@ -11,14 +11,13 @@ public:
 	Character(void);
 	Character(std::string name);
 	Character(Character const & src);
-	~Character(void);
+	virtual ~Character(void);
 
-	void equip(AMateria* m);
-	void unequip(int idx);
-	void use(int idx, ICharacter& target);
+	virtual void equip(AMateria* m);
+	virtual void unequip(int idx);
+	virtual void use(int idx, ICharacter& target);
 
-
-	std::string const & getName() const {return this->_name;}
+	virtual std::string const & getName() const {return this->_name;}
 	Character & operator=(Character const & rhs);
 
 private:

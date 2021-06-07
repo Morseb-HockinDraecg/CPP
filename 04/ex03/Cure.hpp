@@ -9,9 +9,9 @@ public:
 
 	Cure(void);
 	Cure(Cure const & src);
-	~Cure(void);
+	virtual ~Cure(void);
 
-	AMateria* clone() const {return new Cure(*this);}
+	virtual AMateria* clone() const {return new Cure(*this);}
 
 private:
 

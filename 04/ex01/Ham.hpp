@@ -9,7 +9,7 @@ public:
 
 	Ham(void);
 	Ham(Ham const & src);
-	~Ham(void);
+	virtual ~Ham(void);
 
 private:
 

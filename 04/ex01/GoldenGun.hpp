@@ -9,7 +9,7 @@ public:
 
 	GoldenGun(void);
 	GoldenGun(GoldenGun const & src);
-	~GoldenGun(void);
+	virtual ~GoldenGun(void);
 
 	virtual void attack() const;
 private:

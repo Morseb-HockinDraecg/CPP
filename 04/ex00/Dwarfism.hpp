@@ -9,7 +9,7 @@ public:
 
 	Dwarfism(std::string name);
 	Dwarfism(Dwarfism const & src);
-	~Dwarfism(void);
+	virtual ~Dwarfism(void);
 
 	void getPolymorphed() const;
 

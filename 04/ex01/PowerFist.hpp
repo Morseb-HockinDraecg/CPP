@@ -9,7 +9,7 @@ public:
 
 	PowerFist(void);
 	PowerFist(PowerFist const & src);
-	~PowerFist(void);
+	virtual ~PowerFist(void);
 
 	virtual void attack() const;
 

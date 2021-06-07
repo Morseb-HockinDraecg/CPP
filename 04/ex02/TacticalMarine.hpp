@@ -11,7 +11,7 @@ public:
 		{std::cout << "Tactical Marine ready for battle!" << std::endl;}
 	TacticalMarine(TacticalMarine const & src)
 		{this->operator=(src); std::cout << "Tactical Marine ready for battle!" << std::endl;}
-	~TacticalMarine()
+	virtual ~TacticalMarine()
 		{std::cout << "Aaargh..." << std::endl;}
 
 	ISpaceMarine* 	clone() const

@@ -9,7 +9,7 @@ public:
 
 	Paysan(std::string name);
 	Paysan(Paysan const & src);
-	~Paysan(void);
+	virtual ~Paysan(void);
 
 	void getPolymorphed() const;
 

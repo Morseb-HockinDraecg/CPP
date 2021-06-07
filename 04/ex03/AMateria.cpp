@@ -19,7 +19,6 @@ void AMateria::use(ICharacter& target){
 	this->_xp += 10;
 }
 
-
 AMateria & AMateria::operator=(AMateria const & rhs){
     this->_xp = rhs.getXP();
 	this->_type = rhs.getType();

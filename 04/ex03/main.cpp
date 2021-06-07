@@ -1,5 +1,3 @@
-#include "Cure.hpp"
-#include "Ice.hpp"
 #include "Character.hpp"
 #include "MateriaSource.hpp"
 

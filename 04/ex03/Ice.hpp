@@ -9,7 +9,7 @@ public:
  
 	Ice() ;
 	Ice(Ice const & src);
-	~Ice(void) ;
+	virtual ~Ice(void) ;
 
 	AMateria* clone() const {return new Ice(*this);}
 

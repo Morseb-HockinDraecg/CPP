@@ -15,7 +15,7 @@ public:
 		{}
 	Squad(Squad const & src)
 		{this->operator=(src);}
-	~Squad();
+	virtual ~Squad();
 
  	int	getCount() const
 	 	{return this->_squad.size() ;}
