@@ -22,7 +22,7 @@ public:
 	int	push(ISpaceMarine* Marine)
 		{this->_squad.push_back(Marine); return this->getCount();}
 	ISpaceMarine*	getUnit(int n) const
-		{return this->_squad.operator[](n);}
+		{if (n < 0) return (NULL); return this->_squad.operator[](n);}
 	
 	std::deque<ISpaceMarine*> getSquad() const
 		{return this->_squad;}
