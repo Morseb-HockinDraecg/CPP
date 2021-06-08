@@ -4,6 +4,9 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form {
 
@@ -12,7 +15,7 @@ public:
 	Form();//name needed
 	Form(std::string name, int sign, int exec);
 	Form(Form const & src);
-	~Form();
+	virtual ~Form();
 
 	class GradeTooHighException : public std::exception{
 		public :
@@ -34,6 +37,8 @@ public:
 	unsigned int		getMinGradeSign() const {return _minGradeSign;}
 	unsigned int		getMinGradeExec() const {return _minGradeExec;}
 	void				setSigned(bool i) {_signed = i;}
+
+	virtual void execute(Bureaucrat const & executor) const = 0;
 
 private:
 

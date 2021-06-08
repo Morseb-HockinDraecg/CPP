@@ -3,7 +3,7 @@
 
 #include "Form.hpp"
 
-class ShrubberyCreationForm : public Form {
+class ShrubberyCreationForm : virtual public Form {
 
 public:
 
@@ -11,7 +11,7 @@ public:
 	ShrubberyCreationForm(ShrubberyCreationForm const & src);
 	~ShrubberyCreationForm(void);
 
-	ShrubberyCreationForm & operator=(ShrubberyCreationForm const & rhs);
+	virtual void execute(Bureaucrat const & executor) const;
 
 private:
 

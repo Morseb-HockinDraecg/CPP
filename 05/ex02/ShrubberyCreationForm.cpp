@@ -1,16 +1,15 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(void){
+ShrubberyCreationForm::ShrubberyCreationForm(void) : Form("ShrubberyCreation", 145, 137){
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src){
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src): Form(src) {
     this->operator=(src);
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm(void){
 }
 
-ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm const & rhs){
-    // this->_var = rhs.accessVar();
-    return (*this);
+void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const{
+	std::cout << executor.getName() << " has been pardoned by Zafod Beeblebrox." << std::endl;
 }
