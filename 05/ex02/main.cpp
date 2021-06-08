@@ -46,14 +46,13 @@ int main00(){
 
 int main01(){
 	try {
-		// Form formm("Papier", 1200, 23);
-		Form formm("Papier", 12, 230);
+		Form formm("Papier", 200, 12, 23);
 		std::cout << formm << std::endl;
 	} catch (std::exception &e){
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << std::endl;
-	Form formm("Papier", 60, 70);
+	Form formm("Papier", 100, 60, 70);
 	Bureaucrat l("Lou", 57);
 	Bureaucrat p("Perine", 137);
 	std::cout << std::endl;
