@@ -1,9 +1,8 @@
 #ifndef BUREAUCRAT_H
 # define BUREAUCRAT_H
 
-#include <iostream>
-#include <string>
-#include <iomanip>
+#include "Form.hpp"
+
 
 class Bureaucrat {
 
@@ -19,18 +18,20 @@ public:
 	class GradeTooHighException : public std::exception{
 		public :
 			virtual const char * what() const throw(){
-				return ("GradeTooHighException : can't be less than 1");
+				return ("GradeTooHighException <Bureaucrat> : can't be less than 1");
 			}
 	};
 	class GradeTooLowException : public std::exception{
 		public :
 			virtual const char * what() const throw(){
-				return ("GradeTooLowException : can't be more than 150");
+				return ("GradeTooLowException <Bureaucrat> : can't be more than 150");
 			}
 	};
 
 	void		increaseGrade();
 	void		decreaseGrade();
+
+	void		signForm(Form& f);
 
 	unsigned int		getGrade() const	{return _grade;}
 	const std::string	getName() const 	{return _name;}
