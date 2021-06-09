@@ -1,7 +1,9 @@
 #ifndef INTERN_H
 # define INTERN_H
 
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 class Intern {
 
@@ -13,7 +15,7 @@ public:
 
 	Intern & operator=(Intern const & rhs);
 
-	Form*	makeForm(std::string FormName, std::string target);
+	Form*	makeForm(std::string FormName, std::string target) const;
 
 private:
 

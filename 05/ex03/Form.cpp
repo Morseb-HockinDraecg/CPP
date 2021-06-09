@@ -6,10 +6,10 @@ _name(name), _signed(0), _minGradeSign(sign), _minGradeExec(exec){
 		throw Form::GradeTooHighException();
 	else if (sign > 150 || exec > 150)
 		throw Form::GradeTooLowException();
-	else {
-		std::cout << "A form just pop. We will call it "<< name <<
-		 " and give it a min grade of " << sign << " to sign and " << exec << " to exec." << std::endl;
-	}
+	// else {
+	// 	std::cout << "A form just pop. We will call it "<< name <<
+	// 	 " and give it a min grade of " << sign << " to sign and " << exec << " to exec." << std::endl;
+	// }
 }
 
 Form::Form(Form const & src) : _minGradeSign(src.getMinGradeSign()), _minGradeExec(src.getMinGradeExec()){
