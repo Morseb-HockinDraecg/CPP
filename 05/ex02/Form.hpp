@@ -26,7 +26,7 @@ public:
 	class GradeTooLowException : public std::exception{
 		public :
 			virtual const char * what() const throw(){
-				return ("GradeTooLowException <Form> : can't be more than 150");
+				return ("GradeTooLowException <Form> : executor doesn't meet the requirement");
 			}
 	};
 

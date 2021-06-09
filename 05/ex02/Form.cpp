@@ -8,7 +8,7 @@ _name(name), _signed(0), _minGradeSign(sign), _minGradeExec(exec){
 		throw Form::GradeTooLowException();
 	else {
 		std::cout << "A form just pop. We will call it "<< name <<
-		 " and give it a min grade of " << sign << " to sign and " << exec << "to exec." << std::endl;
+		 " and give it a min grade of " << sign << " to sign and " << exec << " to exec." << std::endl;
 	}
 }
 
