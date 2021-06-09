@@ -53,9 +53,9 @@ int main01(){
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << std::endl;
-	Form formm("Papier", 60, 70);
-	Bureaucrat l("Lou", 57);
-	Bureaucrat p("Perine", 137);
+	Form formm("\033[31mPapier\033[0m", 60, 70);
+	Bureaucrat l("\033[32mLou\033[0m", 57);
+	Bureaucrat p("\033[33mPerine\033[0m", 137);
 	std::cout << std::endl;
 
 	std::cout << formm;
@@ -65,6 +65,9 @@ int main01(){
 	l.signForm(formm);
 	std::cout << std::endl;
 
+	formm.beSigned(l);
+	formm.beSigned(p);
+	std::cout << std::endl;
 
 	return 0;
 }

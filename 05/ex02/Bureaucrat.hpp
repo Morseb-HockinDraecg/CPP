@@ -33,6 +33,7 @@ public:
 	void		decreaseGrade();
 
 	void		signForm(Form& f);
+	virtual void		executeForm(Form const & form);
 
 	unsigned int		getGrade() const	{return _grade;}
 	const std::string	getName() const 	{return _name;}

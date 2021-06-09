@@ -34,3 +34,16 @@ std::ostream &	operator<<(std::ostream & o, Form const & rhs){
 	std::cout << std::endl;
 	return o;
 }
+
+void	Form::beSigned(Bureaucrat& b){
+	try {
+		if (b.getGrade() > this->getMinGradeSign()){
+			throw Form::GradeTooLowException();
+		}else {
+			this->_signed = 1;
+			std::cout << this->getName() << " signed." << std::endl;
+		}
+	} catch (std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
+}

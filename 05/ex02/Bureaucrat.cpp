@@ -57,6 +57,14 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs){
     return (*this);
 }
 
+void		Bureaucrat::executeForm(Form const & form){
+	try{
+		form.execute(*this);
+		std::cout << this->getName() << " executes " << form.getName() << std::endl;
+	} catch (std::exception &e){
+	}
+}
+
 std::ostream &	operator<<(std::ostream & o, Bureaucrat const & rhs){
 	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << "." << std::endl;
 	return o;

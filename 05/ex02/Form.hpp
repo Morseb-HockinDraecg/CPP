@@ -39,6 +39,8 @@ public:
 	void				setSigned(bool i) {_signed = i;}
 
 	virtual void execute(Bureaucrat const & executor) const = 0;
+	void	beSigned(Bureaucrat& b);
+
 
 private:
 

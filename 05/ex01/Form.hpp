@@ -4,6 +4,9 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form {
 
@@ -23,11 +26,13 @@ public:
 	class GradeTooLowException : public std::exception{
 		public :
 			virtual const char * what() const throw(){
-				return ("GradeTooLowException <Form> : can't be more than 150");
+				return ("GradeTooLowException <Form> : executor doesn't meet the requirement");
 			}
 	};
 
 	Form & operator=(Form const & rhs);
+	
+	void	beSigned(Bureaucrat& b);
 
 	const std::string	getName() const {return _name;}
 	bool				getSigned() const {return _signed;}

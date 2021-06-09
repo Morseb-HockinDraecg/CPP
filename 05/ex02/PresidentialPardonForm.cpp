@@ -15,11 +15,13 @@ PresidentialPardonForm::~PresidentialPardonForm(void){
 void	PresidentialPardonForm::execute(Bureaucrat const & executor) const{
 	if (!this->getSigned()){
 		std::cout << this->getName()<< " not executed. Need to be sign first !" << std::endl;
+		throw Form::GradeTooLowException();
 		return ;
 	}
-	if (executor.getGrade() > this->getMinGradeExec())
+	if (executor.getGrade() > this->getMinGradeExec()){
 		std::cout << executor.getName() << " does't meet the requirement !" << std::endl;
-		// throw Form::GradeTooLowException();
+		throw Form::GradeTooLowException();
+	}
 	else
-	std::cout << this->_target << " has been pardoned by Zafod Beeblebrox." << std::endl;
+		std::cout << this->_target << " has been pardoned by Zafod Beeblebrox." << std::endl;
 }

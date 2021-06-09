@@ -5,8 +5,6 @@
 #include "Form.hpp"
 #include "Intern.hpp"
 
-
-
 int main02(){
 	// PresidentialPardonForm 	ppf("\033[34mJean-Jacques\033[0m");
 	// RobotomyRequestForm		rrf("\033[34mMarie-Capucine\033[0m");
@@ -26,30 +24,63 @@ int main02(){
 	std::cout << std::endl;
 //PPF test
 	std::cout << "\t --- PPF TEST ---" << std::endl;
-	(*ppf).execute(boss);
-	s.signForm(*ppf);
-	boss.signForm(*ppf);
+	try{
+		(*ppf).execute(boss);
+	} catch (std::exception &e){
+	}
+	try{
+		s.signForm((*ppf));
+	}catch(std::exception &e) {
+	}
+	boss.executeForm((*ppf));
+	boss.signForm((*ppf));
+	boss.executeForm((*ppf));
+	try{
 	(*ppf).execute(s);
-	(*ppf).execute(boss);
-	g.signForm(*ppf);
+		(*ppf).execute(boss);
+	}catch(std::exception &e) {
+	}
+	g.signForm((*ppf));
 	std::cout << std::endl;
 //RRF test
 	std::cout  << "\t --- RRF TEST ---"<< std::endl;
-	(*rrf).execute(boss);
-	s.signForm((*rrf));
+	try{
+		(*rrf).execute(boss);
+	} catch (std::exception &e){
+	}
+	try{
+		s.signForm((*rrf));
+	}catch(std::exception &e) {
+	}
+	boss.executeForm((*rrf));
 	boss.signForm((*rrf));
+	boss.executeForm((*rrf));
+	try{
 	(*rrf).execute(s);
-	(*rrf).execute(boss);
+		(*rrf).execute(boss);
+	}catch(std::exception &e) {
+	}
 	g.signForm((*rrf));
 	std::cout << std::endl;
 //SCF test
 	std::cout  << "\t --- SCF TEST ---"<< std::endl;
-	(*scf).execute(boss);
-	s.signForm((*scf));
+		try{
+		(*scf).execute(boss);
+	} catch (std::exception &e){
+	}
+	try{
+		s.signForm((*scf));
+	}catch(std::exception &e) {
+	}
+	boss.executeForm((*scf));
 	boss.signForm((*scf));
+	boss.executeForm((*scf));
+	try{
 	(*scf).execute(s);
-	(*scf).execute(boss);
-	g.signForm((*scf));
+		(*scf).execute(boss);
+	}catch(std::exception &e) {
+	}
+	g.signForm(*scf);
 	std::cout << std::endl;
 
 	delete ppf;
