@@ -4,13 +4,13 @@ OBJ_DIR	:= obj/
 
 OBJ_DIRS = $(OBJ_DIR)
 
-PRE_SRCS =	main Class_name
+PRE_SRCS =	main Convert
 
 SRCS = $(addsuffix .cpp, $(addprefix $(SRC_DIR), $(PRE_SRCS)))
 OBJS = $(addsuffix .o, $(addprefix $(OBJ_DIR), $(PRE_SRCS)))
 
 
-NAME := 
+NAME := convert
 
 
 CC := clang++
