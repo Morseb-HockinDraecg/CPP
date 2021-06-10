@@ -1,4 +1,12 @@
-#include "Class_name.hpp"
+#include "Data.hpp"
+
+void * serialize(void){
+
+}
+
+Data * deserialize(void * raw){
+
+}
 
 int main(){
 
