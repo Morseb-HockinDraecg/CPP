@@ -1,16 +1,16 @@
 # INC_DIR := inc/
 # SRC_DIR	:= srcs/
-OBJ_DIR	:= obj/
+# OBJ_DIR	:= obj/
 
 OBJ_DIRS = $(OBJ_DIR)
 
-PRE_SRCS =	main Class_name
+PRE_SRCS =	main
 
 SRCS = $(addsuffix .cpp, $(addprefix $(SRC_DIR), $(PRE_SRCS)))
 OBJS = $(addsuffix .o, $(addprefix $(OBJ_DIR), $(PRE_SRCS)))
 
 
-NAME := 
+NAME := ex02
 
 
 CC := clang++
@@ -34,7 +34,7 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
 	echo "$@ \033[32mcreated\033[0m"
 
 clean:
-	rm -rf $(OBJ_DIR)
+	rm -rf main.o
 
 fclean: 	clean
 	rm -f $(NAME)
