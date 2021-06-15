@@ -11,7 +11,6 @@ struct Data
 };
 
 
-
 /*
 **	serialize
 */
@@ -46,16 +45,12 @@ void * serialize(void){
 }
 
 
-
-
 /*
 **	deserialize
 */
 Data * deserialize(void * raw){
 	return (reinterpret_cast<Data *>(raw));
 }
-
-
 
 
 //////
