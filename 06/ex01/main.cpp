@@ -70,5 +70,7 @@ int main(){
 	std::cout << "data* address : " << d << std::endl;
 	std::cout << "s1: "<< d->s1 << " | s2 : " << d->s2 << " | int : " << d->i << std::endl;
 
+	delete d;
+
 	return 0;
 }
