@@ -22,7 +22,7 @@ public:
 	size_t	getSize() const;
 	T *		getRawArray() const ;
 
-	Array & operator=(Array const & rhs);
+	Array<T> & operator=(Array const & rhs);
 	T & operator[](size_t pos) const;
 
 };
@@ -44,6 +44,13 @@ template <typename T>
 Array<T>::Array(unsigned int n): rawArray(new T[n]), size(n){
 	for (unsigned int i = 0; i < n; i++)
 		this->rawArray[i] = T();
+}
+
+template <typename T>
+Array<T>::Array(Array const & src): rawArray(new T[src.getSize()]), size(src.getSize()){
+	size_t	sizeRhs = src.getSize();
+	for (size_t i = 0; i < sizeRhs; i++)
+		this->rawArray[i] = src.rawArray[i];
 }
 
 template <typename T>
@@ -76,8 +83,12 @@ T &	Array<T>::operator[](size_t pos) const{
 
 template <typename T>
 Array<T> &	Array<T>::operator=(Array const & rhs){
-	this->rawArray = rhs.getRawArray();
-	this->size = rhs.getSize();
+	size_t	sizeRhs = rhs.getSize();
+	delete [] this->rawArray;
+	this->rawArray = new T[sizeRhs];
+	this->size = sizeRhs;
+	for (size_t i = 0; i < sizeRhs; i++)
+		this->rawArray[i] = rhs.rawArray[i];
 	return *this;
 }
 
