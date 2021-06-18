@@ -22,4 +22,24 @@ void swap(T & a, T & b){
 	b = tmp;
 }
 
+class
+Awesome {
+public:
+	Awesome( int n ) : _n( n ) {}
+	bool operator==( Awesome const & rhs ) const { return (this->_n == rhs._n); }
+	bool operator!=( Awesome const & rhs ) const { return (this->_n != rhs._n); }
+	bool operator>( Awesome const & rhs ) const { return (this->_n > rhs._n); }
+	bool operator<( Awesome const & rhs ) const { return (this->_n < rhs._n); }
+	bool operator>=( Awesome const & rhs ) const { return (this->_n >= rhs._n); }
+	bool operator<=( Awesome const & rhs ) const { return (this->_n <= rhs._n); }
+	int getInt(void) const {return this->_n;}
+private:
+	int _n;
+};
+std::ostream & operator<<(std::ostream & o, const Awesome & array){
+	o << array.getInt();
+	return o;
+};
+
+
 #endif

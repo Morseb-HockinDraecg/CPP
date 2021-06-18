@@ -5,23 +5,25 @@
 #include <string>
 #include <iomanip>
 
-template <typename T, size_t N >
-void iter(T (*x)[N], size_t n, void (*U)(T *)){
-	n++;
-	while (n--){
-		// std::cout << x[0][n] << "   ";
-		U(&x[0][n]);
-		// std::cout << x[0][n] << std::endl;
-	}
-}
+class Awesome
+{
+public:
+	Awesome( void ) : _n( 42 ) { return; }
+	int get( void ) const { return this->_n; }
+private:
+	int _n;
+};
 
-template <typename T>
-void addOne(T* i){
-	*i += 1;
-}
+std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
 
-void hideLastChar(std::string* s){
-	(*s)[s->length() - 1] = ' ';
+template< typename T >
+void print( T const & x ) { 
+std::cout << x << std::endl; return;}
+
+template <typename T >
+void iter(T *x, size_t n, void (*U)(T const &)){
+	for(size_t i = 0; i < n; i++)
+		U(x[i]);
 }
 
 #endif

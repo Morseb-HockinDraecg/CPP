@@ -3,7 +3,7 @@
 NinjaTrap::NinjaTrap( void){
    std::cout << "Copy Constructor called" << std::endl;
 }
-NinjaTrap::NinjaTrap(std::string name) :  ClapTrap(name, 60, 120, 100, 100, 30, 20, 5) {
+NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name, 60, 120, 100, 100, 30, 20, 5) {
     std::cout << "Constructor called" << std::endl;
 }
 
